@@ -1,0 +1,34 @@
+<div class="wrapper">
+	<nav class="nav">
+		<ul class="nav__list" role="menubar" *ngIf="isAdmin">
+			<li class="nav__item dashboard nav__item--isActive" (click)="active('dashboard')" [routerLink]="'/dashboard'">
+				<a class="nav__link focus--box-shadow" role="menuitem" aria-label="Home">
+					<i class="fas fa-home nav__icon" role="presentation"></i>
+				</a>
+			</li>
+			<!-- <li class="nav__item clients" (click)="active('clients')" [routerLink]="'/clients'">
+				<a class="nav__link focus--box-shadow" role="menuitem" aria-label="Clients">
+					<i class="fas fa-users nav__icon" role="presentation"></i>
+				</a>
+			</li> -->
+			<li class="nav__item users" (click)="active('users')" [routerLink]="'/users'">
+				<a class="nav__link focus--box-shadow" role="menuitem" aria-label="Users">
+					<i class="fas fa-users-cog nav__icon" role="presentation"></i>
+				</a>
+			</li>
+			<!-- <li class="nav__item trucks" (click)="active('trucks')">
+				<a class="nav__link focus--box-shadow" role="menuitem" aria-label="Trucks">
+					<i class="fas fa-truck-moving nav__icon" role="presentation"></i>
+				</a>
+			</li> -->
+		</ul>
+
+		<ul class="nav__list" role="menubar" *ngIf="isAdmin==false">
+			<li class="nav__item dashboard nav__item--isActive" (click)="active('dashboard')" [routerLink]="'/dashboard'">
+				<a class="nav__link focus--box-shadow" role="menuitem" aria-label="Home">
+					<i class="fas fa-home nav__icon" role="presentation"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>

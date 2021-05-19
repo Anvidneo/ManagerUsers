@@ -1,0 +1,71 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<h6 class="modal-title" id="modal-title-default">Actualizar usuario</h6>
+		<button type="button"  class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+			<span aria-hidden="true">×</span>
+		</button>
+	</div>
+	<form role="form" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+		<div class="modal-body">
+			<div class=" row">
+				<div class=" col-md-6">
+					<div class=" form-group">
+						<div class=" form-group">
+							<label class=" form-control-label" for="name">Nombre *</label>
+							<input class=" form-control" placeholder="Ingrese el nombre" type="text" formControlName="name" id="name"/>
+							<div class="error" *ngIf="updateForm.controls['name'].hasError('required') && updateForm.controls['name'].touched">Campo requerido</div>
+						</div>
+					</div>
+				</div>
+				<div class=" col-md-6">
+					<div class=" form-group">
+						<div class=" form-group">
+							<label class=" form-control-label" for="name">Teléfono</label>
+							<input class=" form-control" placeholder="Ingrese el teléfono" type="number" formControlName="phone" id="phone"/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class=" row">
+				<div class=" col-md-6">
+					<div class=" form-group">
+						<div class=" form-group">
+							<label class=" form-control-label" for="mail">Correo *</label>
+							<input class=" form-control" placeholder="Ingrese el correo" type="text" formControlName="mail" id="mail"/>
+							<div class="error" *ngIf="updateForm.controls['mail'].hasError('required') && updateForm.controls['mail'].touched">Campo requerido</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class=" col-md-6">
+					<div class=" form-group">
+						<div class=" form-group">
+							<label class=" form-control-label" for="password">Contraseña *</label>
+							<input class=" form-control" placeholder="Ingrese la contraseña" type="password" formControlName="password" id="password" />
+							<div class="error" *ngIf="updateForm.controls['password'].hasError('required') && updateForm.controls['password'].touched">Campo requerido</div>
+						</div>
+					</div>
+				</div> -->
+
+				<div class=" col-md-6">
+					<div class=" form-group">
+						<div class=" form-group">
+							<label class=" form-control-label" for="role">Rol *</label>
+							<select class=" form-control" formControlName="role" id="role">
+								<option value=""> Seleccioanr rol </option>
+								<option value="0"> Admin </option>
+								<option value="1"> User</option>
+							</select>
+							<div class="error" *ngIf="updateForm.controls['role'].hasError('required') && updateForm.controls['role'].touched">Campo requerido</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary my-4">Guardar</button>
+			<button type="button" class="btn btn-link  ml-auto" data-dismiss="modal"(click)="c('Cross click')">Cancelar</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="forms-container">
+	  <div class="signin-signup">
+		<form role="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="sign-in-form">
+		  <div class="input-field">
+			<i class="fas fa-user"></i>
+			<input class="form-control" formControlName="mail" id="mail" type="text" placeholder="Mail" autocomplete="off"/>
+		  </div>
+		  <div class="input-field">
+			<i class="fas fa-lock"></i>
+			<input class="form-control" formControlName="password" id="password" type="password" placeholder="Password" autocomplete="off"/>
+		  </div>
+		  <input type="submit" value="Login" class="btn solid" />
+		</form>
+	  </div>
+	</div>
+
+	<div class="panels-container">
+	  <div class="panel left-panel">
+		<div class="content">
+	  </div>
+	</div>
+  </div>

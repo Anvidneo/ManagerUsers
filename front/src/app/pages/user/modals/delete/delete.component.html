@@ -1,0 +1,23 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<h6 class="modal-title" id="modal-title-default">Eliminar usuario</h6>
+		<button type="button"  class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+			<span aria-hidden="true">×</span>
+		</button>
+	</div>
+	<form role="form" (ngSubmit)="onSubmit()">
+		<div class="modal-body">
+			<div class=" row">
+				<div class=" col-md-12">
+					<label class=" form-control-label">
+                        ¿Está seguro que desea eliminar el usuario seleccionado?
+                    </label>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary my-4">Confirmar</button>
+			<button type="button" class="btn btn-link  ml-auto" data-dismiss="modal"(click)="c('Cross click')">Cancelar</button>
+		</div>
+	</form>
+</div>

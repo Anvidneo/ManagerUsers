@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+    background-color: #e9e8ec !important;
+    font-size: 16px !important;
+    color: #242221 !important;
+    overflow:hidden;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+.content__dash{
+    width: 85%;
+    height: 80vh;
+    margin-top: -5%;
+    margin-left: 10%;
+}
+
+@media (max-width: 768px) {
+    .content__dash {
+        margin-top: -110vh;
+        width: 30vh;
+        margin-left: 29%;
+    }
+}
+
+.select2-container--default
+.select2-selection--single {
+    border: 2px solid #EFEFEF !important;
+    height: 40px !important;
+}
+
+.select2-container--default 
+.select2-selection--single 
+.select2-selection__rendered {
+    color:#949191 !important;
+    position: relative !important;
+    margin-top: -1% !important;
+    font-size: 15px !important;
+}
+
+.select2-container--default 
+.select2-results__option--highlighted[aria-selected]  {
+    background-color: #5e72e4 !important;
+}
+

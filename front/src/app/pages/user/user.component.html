@@ -1,0 +1,56 @@
+<div class="content__dash">
+	<div class=" container-fluid mt--6">
+		<div class=" row">
+			<div class=" col">
+				<div class="card">
+					<!-- Card header -->
+					<div class="card-header">
+						<div class="row">
+							<h2 class="title__dashboard col-sm-4 col-md-4">Listado de usuarios</h2>
+							<div class="text-right col-sm-8 col-md-8">
+								<a class=" btn btn-sm btn-neutral" href="javascript:void(0)" (click)="open(create)">Nuevo</a>
+								<a class=" btn btn-sm btn-neutral" href="javascript:void(0)" (click)="openEdit(update)">Ver</a>
+								<a class=" btn btn-sm btn-neutral" href="javascript:void(0)" (click)="openDelete(delete)">Eliminar</a>
+							</div>
+						</div>
+					</div>
+					<div class="dataTables_wrapper py-4">
+						<div class="row">
+							<div class="col-sm-12 col-md-12">
+								<div id="datatable_filter" class="col-sm-12 col-md-12 dataTables_filter">
+									<label class="col-sm-12 col-md-12">
+										<input type="search" class="form-control form-control-sm"
+											placeholder="Buscar" aria-controls="datatable"
+											(keyup)="filterTable($event)" />
+									</label>
+								</div>
+							</div>
+						</div>
+	
+						<ngx-datatable id="print-section" class="bootstrap selection-cell" [columnMode]="'force'"
+							[headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
+							[limit]="entries != -1 ? entries : undefined" [rows]="tempUsers" [selected]="selected"
+							[selectionType]="'single'">
+							<ngx-datatable-column prop="id" name="Id"></ngx-datatable-column>
+							<ngx-datatable-column prop="name" name="Nombre"></ngx-datatable-column>
+							<ngx-datatable-column prop="mail" name="Correo electronico"></ngx-datatable-column>
+							<ngx-datatable-column prop="phone" name="Teléfono"></ngx-datatable-column>
+						</ngx-datatable>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-template #create let-c="close" let-d="dismiss">
+	<app-create [c]="c" [d]="d"></app-create>
+</ng-template>
+
+<ng-template #update let-c="close" let-d="dismiss">
+	<app-update [selected]="selected" [c]="c" [d]="d"></app-update>
+</ng-template>
+
+<ng-template #delete let-c="close" let-d="dismiss">
+	<app-delete [selected]="selected" [c]="c" [d]="d"></app-delete>
+</ng-template>
